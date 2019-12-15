@@ -10,7 +10,6 @@ import { withStyles } from '@material-ui/core';
 import Notification from '../Notification/Notification'
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
-import '../../assets/css/icons/all.css'; // Tell Webpack that Button.js uses these styles
 import { pink, blueGrey, yellow, teal, indigo, grey } from '@material-ui/core/colors'; // eslint-disable-line
 import Box from '@material-ui/core/Box';
 import history from './history';
