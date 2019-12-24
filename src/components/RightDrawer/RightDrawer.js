@@ -13,6 +13,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import { withRouter } from 'react-router-dom'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const classes = theme => {
     return ({
@@ -66,7 +67,7 @@ class RightDrawer extends Component {
 
             <>
                 <IconButton className={classes.hamburger} onClick={this.openProfileDrawer.bind(this)} edge="start" color="inherit" aria-label="profile-menu">
-                    <label style={{ fontSize: '1.0em' }} className="fal fa-bars " />
+                    <MenuIcon/>
                 </IconButton >
                 <Drawer open={isProfileDrawerOpen}
                     anchor="right"

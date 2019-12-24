@@ -31,7 +31,7 @@ const classes = theme => {
 
 class App extends Component {
 
-  state = { loading: true }
+  state = { loading: false }
 
 
   componentDidUpdate(prevProps) {
