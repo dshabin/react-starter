@@ -9,15 +9,14 @@ import { translate } from '../../localization/helpers'
 import { withStyles } from '@material-ui/core';
 import { signupAction, signupReset } from '../../_actions/signup'
 import CircularProgress from '@material-ui/core/CircularProgress';
-import PageTitle from '../PageTitle/PageTitle';
 
 const classes = theme => {
     return (
         {
             signupButton: {
                 marginTop: theme.spacing(2),
-                fontSize: '0.8em',
-                borderRadius: '0px'
+                height: '4em'
+                //borderRadius: '0px'
             },
             progress: {
                 marginLeft: '10px',
@@ -28,7 +27,6 @@ const classes = theme => {
             containerPaper: {
                 minHeight: '400px',
                 padding: '20px',
-                marginTop : '2px'
             },
         }
     );
@@ -84,71 +82,77 @@ class Signup extends Component {
         const { validation, isFormInitial } = this.state
         return (
             <>
-                <PageTitle title="SIGNUP" />
-                
-                        <Paper square={true} className={classes.containerPaper} >
-                            <Grid container justify="center" alignItems="center" direction="row"  >
-                                <Grid item xs={12} sm={6} md={6}  >
-                                    <form noValidate autoComplete="off">
-                                        <TextField
-                                            className={classes.textField}
-                                            label={translate(language, 'USERNAME')}
-                                            error={!!validation.username}
-                                            fullWidth
-                                            onChange={this.handleInputChange.bind(this)}
-                                            margin="dense"
-                                            id="username"
-                                            autoComplete="off"
-                                            disabled={pending}
-                                            helperText={translate(language, validation.username)}
-                                            
-                                        />
-                                        <TextField
-                                            className={classes.textField}
-                                            error={!!validation.password}
-                                            fullWidth
-                                            id="password"
-                                            onChange={this.handleInputChange.bind(this)}
-                                            margin="dense"
-                                            autoComplete="off"
-                                            label={translate(language, 'PASSWORD')}
-                                            disabled={pending}
-                                            type="password"
-                                            helperText={translate(language, validation.password)}
-                                           
-                                        />
-                                        <TextField
-                                            className={classes.textField}
-                                            error={!!validation.confirmPassword}
-                                            fullWidth
-                                            id="confirmPassword"
-                                            onChange={this.handleInputChange.bind(this)}
-                                            margin="dense"
-                                            autoComplete="off"
-                                            label={translate(language, 'CONFIRM_PASSWORD')}
-                                            disabled={pending}
-                                            type="password"
-                                            helperText={translate(language, validation.confirmPassword)}
-                                           
-                                        />
-                                        <Button
-                                            fullWidth
-                                            className={classes.signupButton}
-                                            onClick={this.signupClickHandler.bind(this)}
-                                            color="secondary"
-                                            variant="contained"
-                                            disabled={pending || (Object.keys(validation).length !== 0) || isFormInitial}
-                                            size="large" >
-                                            <Typography>
-                                                {translate(language, "SIGNUP")}
-                                            </Typography>
-                                            {pending && <CircularProgress className={classes.progress} thickness={5} size={20} />}
-                                        </Button>
-                                    </form>
-                                </Grid>
-                            </Grid>
-                        </Paper>
-                   
+                {/* <PageTitle title="SIGNUP" /> */}
+
+                <Paper elevation={0} square={true} className={classes.containerPaper} >
+                    <Grid container justify="center" alignItems="center" direction="row"  >
+
+                        <Grid item xs={12} sm={6} md={6}  >
+                            <Typography variant="h6">
+                            {translate(language, "CREATE_YOUR_ACCOUNT")}
+
+                        </Typography>
+                            <form noValidate autoComplete="off">
+                                <TextField
+                                    className={classes.textField}
+                                    label={translate(language, 'USERNAME')}
+                                    error={!!validation.username}
+                                    fullWidth
+                                    onChange={this.handleInputChange.bind(this)}
+                                    id="username"
+                                    autoComplete="off"
+                                    disabled={pending}
+                                    variant="outlined"
+                                    helperText={translate(language, validation.username)}
+
+                                />
+                                <TextField
+                                    variant="outlined"
+
+                                    className={classes.textField}
+                                    error={!!validation.password}
+                                    fullWidth
+                                    id="password"
+                                    onChange={this.handleInputChange.bind(this)}
+                                    autoComplete="off"
+                                    label={translate(language, 'PASSWORD')}
+                                    disabled={pending}
+                                    type="password"
+                                    helperText={translate(language, validation.password)}
+
+                                />
+                                <TextField variant="outlined"
+
+                                    className={classes.textField}
+                                    error={!!validation.confirmPassword}
+                                    fullWidth
+                                    id="confirmPassword"
+                                    onChange={this.handleInputChange.bind(this)}
+                                    autoComplete="off"
+                                    label={translate(language, 'CONFIRM_PASSWORD')}
+                                    disabled={pending}
+                                    type="password"
+                                    helperText={translate(language, validation.confirmPassword)}
+
+                                />
+                                <Button
+                                    fullWidth
+                                    className={classes.signupButton}
+                                    onClick={this.signupClickHandler.bind(this)}
+                                    color="secondary"
+                                    variant="contained"
+                                    disabled={pending || (Object.keys(validation).length !== 0) || isFormInitial}
+                                    size="large" >
+                                    <Typography>
+                                        {translate(language, "SIGNUP")}
+                                    </Typography>
+                                    {pending && <CircularProgress className={classes.progress} thickness={5} size={20} />}
+                                </Button>
+                            </form>
+                        </Grid>
+                    </Grid>
+                </Paper>
+
             </>
         )
     }

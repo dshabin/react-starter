@@ -6,25 +6,25 @@ import { withStyles, Paper } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { translate } from '../../localization/helpers'
-
+import Link from '@material-ui/core/Link';
 
 
 
 const classes = theme => {
     return ({
         gridItem: {
-            textAlign: 'left'
+            textAlign: 'left',
+            color: theme.palette.primary.link
         },
         paper: {
             padding: theme.spacing(2),
-            marginTop: '2px',     
-   
+            backgroundColor: '#f5f5f5'
         },
         link: {
             cursor: 'pointer'
         },
         languageSelect: {
-            minWidth : '100px'
+            minWidth: '100px'
         }
     })
 }
@@ -42,8 +42,10 @@ class Footer extends Component {
                 <Grid container justify="flex-start" direction="row" spacing={2} >
                     <Grid item xs={12} sm={12} className={classes.languageSelect}>
                         <Select
-                        className={classes.languageSelect}
+                            className={classes.languageSelect}
                             native
+                            variant="outlined"
+                            margin='dense'
                             value={language ? language : "english"}
                             onChange={this.languageSelectChangeHandler.bind(this)}
 
@@ -54,7 +56,9 @@ class Footer extends Component {
                     </Grid>
                     <Grid item xs={12} sm={6} className={classes.gridItem}>
                         <Typography>
-                            {translate(language, "SUPPORT")}
+                            <Link color="inherit" >
+                                {translate(language, "SUPPORT")}
+                            </Link>
                         </Typography>
                     </Grid>
 

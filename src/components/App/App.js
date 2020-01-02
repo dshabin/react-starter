@@ -63,9 +63,14 @@ class App extends Component {
     const theme = createMuiTheme({
       direction: languageDir,
       palette: {
-        type: 'dark',
-        primary:blueGrey,
-        secondary:  amber,
+        type: 'light',
+        primary: {
+          main : '#4dd0e1',  //'#5ADBFF'
+          link : '#999'
+        },
+        secondary:  {
+          main :'#7c4dff'
+        },
       },
       props: {
         MuiButtonBase: {

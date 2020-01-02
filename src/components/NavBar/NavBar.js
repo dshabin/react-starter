@@ -18,11 +18,12 @@ const classes = theme => {
         loginBtn: {
             marginRight: theme.spacing(1),
             fontSize: '0.8em',
-            borderRadius: '0px',
+            color : '#ffffff'
+            //borderRadius: '0px',
 
         },
         signupBtn: {
-            borderRadius: '0px',
+            //borderRadius: '0px',
             fontSize: '0.8em',
         },
         logo: {
@@ -43,7 +44,7 @@ class NavBar extends Component {
         let { user, language, classes } = this.props;
         return (
             <AppBar elevation={0} position="static" className={classes.appBar}>
-                <Toolbar variant="dense" >
+                <Toolbar >
                     <Box component="span" className={classes.logoBox}>
                         <Link to='/' style={{ height: '30px' }}>
                             <Typography variant="button">

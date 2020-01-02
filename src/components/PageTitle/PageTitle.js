@@ -13,6 +13,7 @@ const classes = theme => {
                 padding: '4px',
                 textAlign: 'center',
                 marginTop : '2px',
+                color : '#9facbd'
             },
         }
     );
@@ -24,7 +25,7 @@ class PageTitle extends Component {
         const { classes, language, title } = this.props
         return (
             <Paper elevation={0} square={true} className={classes.headerPaper} >
-                <Typography variant="h6">
+                <Typography >
                     {translate(language, title)}
                 </Typography>
             </Paper>

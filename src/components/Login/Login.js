@@ -30,7 +30,7 @@ const classes = theme => {
                 minHeight: '400px',
                 padding: '20px',
                 marginTop:'2px',
-
+                backgroundColor : '#7D7D7D'
             },
            
         }

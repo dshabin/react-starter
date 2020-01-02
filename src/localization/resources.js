@@ -21,7 +21,11 @@ export default
             "PASSWORD_REQUIRED_ERROR" : "Password is required.",
             "CONFIRM_PASSWORD": "Confirm password",
             "CONFIRM_PASSWORD_REQUIRED_ERROR": "Confirm password is required.",
-            "CONFIRM_PASSWORD_NOT_MATCH_ERROR" : "Passwords missmatch."
+            "CONFIRM_PASSWORD_NOT_MATCH_ERROR" : "Passwords missmatch.",
+            "SUPPORT" : "Support",
+            "TERMS" : "Terms",
+            "CREATE_YOUR_ACCOUNT" : "Create your account"
+
         }
     },
     "farsi": {
@@ -46,6 +50,10 @@ export default
             "CONFIRM_PASSWORD": "تکرار رمز عبور",
             "CONFIRM_PASSWORD_REQUIRED_ERROR": "تکرار رمز عبور الزامی است.",
             "CONFIRM_PASSWORD_NOT_MATCH_ERROR" : "رمز های عبور همخوان نیستند.",
+            "SUPPORT" : "پشتیبانی",
+            "TERMS" : "قوانین",
+            "CREATE_YOUR_ACCOUNT" : "حساب جدید درست کنید"
+
         }
     }
     
