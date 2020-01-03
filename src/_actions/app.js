@@ -1,10 +1,10 @@
 import { NOTIFICATION } from './notification'
-import { apiCall } from '../services/http'
 export const LOGOUT = 'LOGOUT';
 export const USER = 'USER';
 export const FETCH_CURRENT_PENDING = 'FETCH_CURRENT_PENDING';
 export const FETCH_CURRENT_ERROR = 'FETCH_CURRENT_ERROR';
 export const FETCH_CURRENT_SUCCESS = 'FETCH_CURRENT_SUCCESS';
+import { apiUrl } from '../config/config'; // eslint-disable-line
 
 
 
@@ -17,14 +17,20 @@ export function logoutAction() {
 
 export function fetchCurrentAction() {
     console.log("--- --- FETCH_REQUEST ACTOIN --- ---")
+    console.log(localStorage.getItem('token'))
+
     return async (dispatch) => {
         try {
             dispatch({ type: FETCH_CURRENT_PENDING, payload: true });
-            let result = await apiCall({
-                path: "/api/auth/fetch-current/",
-                method: "GET",
-                authorization: true
-            })
+            let result = await fetch(`${apiUrl}/api/users/fetch-current/`,
+                {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization' : `TOKEN ${localStorage.getItem('token')}`
+                    },
+                });
             result = await result.json();
             if (result.error) {
                 dispatch({ type: FETCH_CURRENT_ERROR, payload: result.error.message.toString() });

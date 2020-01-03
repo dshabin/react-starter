@@ -9,7 +9,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import { logoutAction } from '../../_actions/app'
-import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import { withRouter } from 'react-router-dom'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -26,7 +25,7 @@ const classes = theme => {
             paddingLeft: theme.spacing(4),
         },
         hamburger: {
-            width: '2em'
+            color : theme.palette.secondary.main
         },
         list: {
             width: '250px',
@@ -36,7 +35,6 @@ const classes = theme => {
             fontSize: '0.8em',
             borderRadius: '0px'
         },
-
     })
 }
 class RightDrawer extends Component {
@@ -78,16 +76,7 @@ class RightDrawer extends Component {
                         <List
                             className={classes.list}
                             component="nav"
-                            aria-labelledby="nested-list-subheader"
-                            subheader={
-                                <ListSubheader component="div" id="nested-list-subheader">
-                                    <Typography variant="caption" >
-                                        <label onClick={this.closeProfileDrawer.bind(this)} style={{ fontSize: '1.5em', color: '#ffffff' }} className="fal fa-times" />
-                                    </Typography>
-                                </ListSubheader>
-                            }
                         >
-                            <Divider /> 
                             <ListItem onClick={this.logout.bind(this)} button key={translate(language, "LOGOUT")} >
                                 <ListItemText>
                                     <Typography >
