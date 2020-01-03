@@ -1,6 +1,7 @@
 import { apiUrl } from '../config/config'; // eslint-disable-line
 import { NOTIFICATION } from './notification'
 import { USER } from './app';
+import history from '../components/App/history'
 
 export const LOGIN_PENDING = 'LOGIN_PENDING';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
@@ -31,6 +32,8 @@ export function loginAction(username, password) {
                 localStorage.setItem('token', result.data.token)
                 dispatch({ type: LOGIN_SUCCESS, payload: result.data });
                 dispatch({ type: USER, payload: result.data });
+                history.push('/')
+
             }
         } catch (error) {
             dispatch({ type: LOGIN_ERROR, payload: error.message.toString() });

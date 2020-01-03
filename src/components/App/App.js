@@ -17,6 +17,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Login from '../Login/Login'
 import Signup from '../Signup/Signup'
 import Home from '../Home/Home';
+import Account from '../Account/Account';
 
 const classes = theme => {
   return ({
@@ -57,7 +58,7 @@ class App extends Component {
   }
 
   render() {
-    const { language, user , classes} = this.props
+    const { language, user, classes } = this.props
     const languageDir = getLanguageDir(language)
     document.body.dir = languageDir;
     const theme = createMuiTheme({
@@ -65,12 +66,12 @@ class App extends Component {
       palette: {
         type: 'light',
         primary: {
-          main : '#4dd0e1',  //'#5ADBFF'
-          link : '#999',
-          buttonText : '#ffffff'
+          main: '#4dd0e1',  //'#5ADBFF'
+          link: '#999',
+          buttonText: '#ffffff'
         },
-        secondary:  {
-          main :'#7c4dff'
+        secondary: {
+          main: '#7c4dff'
         },
       },
       props: {
@@ -91,9 +92,10 @@ class App extends Component {
             <CssBaseline />
             <NavBar user={user} />
             <Box className={classes.box}>
-              <Route exact path="/" render={() => (<Home/>)} />
+              <Route exact path="/" render={() => (<Home />)} />
               <Route exact path="/login" render={() => (user ? (<Redirect to="/" />) : (<Login />))} />
               <Route exact path="/signup" render={() => (user ? (<Redirect to="/" />) : (<Signup />))} />
+              <Route exact path="/account" render={() => (user ? (<Account user={user} />) : (<Login />))} />
             </Box>
             <Footer />
             <Notification />

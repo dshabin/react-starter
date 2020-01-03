@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Router as Switch, Route, Router, Redirect } from "react-router-dom"; // eslint-disable-line
 import { connect } from 'react-redux';
-import { fetchCurrentAction } from '../../_actions/app'
 import { withStyles } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
 import { withRouter } from 'react-router-dom'
+import { Paper } from '@material-ui/core';
 
 const classes = theme => {
     return ({
-        containerBox: {
-            marginTop: '2px'
-        }
+        containerPaper: {
+            padding: '10px',
+        },
     })
 }
 
@@ -19,11 +18,11 @@ class Account extends Component {
     state = {}
 
     render() {
-
+        const { classes } = this.props
         return (
-            <Box className={classes.containerBox}>
-                <h1>Hello</h1>
-            </Box>
+            <Paper square={true} className={classes.containerPaper} >
+                <h1>ACCOUNT</h1>
+            </Paper >
         );
     }
 }
@@ -37,7 +36,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchCurrentAction: () => dispatch(fetchCurrentAction())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(classes)(withRouter(Account)));

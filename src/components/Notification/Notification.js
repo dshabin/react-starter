@@ -79,7 +79,7 @@ class Notification extends Component {
                     onClose={this.closeSnack.bind(this)}
                 >
                     <SnackbarContent
-                        style={{ borderRadius: '0px' }}
+                       
                         className={clsx(classes[notification.type])}
                         aria-describedby="client-snackbar"
                         message={
