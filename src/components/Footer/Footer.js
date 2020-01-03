@@ -24,6 +24,7 @@ const classes = theme => {
             cursor: 'pointer'
         },
         languageSelect: {
+            color: theme.palette.primary.link,
             minWidth: '100px'
         }
     })
