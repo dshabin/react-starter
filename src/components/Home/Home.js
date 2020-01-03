@@ -8,9 +8,7 @@ import { Paper } from '@material-ui/core';
 const classes = theme => {
     return ({
         containerPaper: {
-            minHeight: '400px',
             padding: '10px',
-            marginTop: '2px'
         },
     })
 }
@@ -24,7 +22,7 @@ class Home extends Component {
 
         return (
             <Paper square={true} className={classes.containerPaper} >
-                <h1>Hello World</h1>
+                <h1>HOME</h1>
             </Paper >
         );
     }

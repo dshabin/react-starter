@@ -20,20 +20,12 @@ const classes = theme => {
         listItemText: {
             fontSize: '0.8em'
         },
-
-        nested: {
-            paddingLeft: theme.spacing(4),
-        },
         hamburger: {
-            color : theme.palette.secondary.main
+            color : theme.palette.primary.main,
+
         },
         list: {
             width: '250px',
-        },
-        depositButton: {
-            marginTop: theme.spacing(2),
-            fontSize: '0.8em',
-            borderRadius: '0px'
         },
     })
 }
@@ -64,7 +56,7 @@ class RightDrawer extends Component {
         return (
 
             <>
-                <IconButton className={classes.hamburger} onClick={this.openProfileDrawer.bind(this)} edge="start" color="inherit" aria-label="profile-menu">
+                <IconButton className={classes.hamburger} onClick={this.openProfileDrawer.bind(this)} edge="start" >
                     <MenuIcon/>
                 </IconButton >
                 <Drawer open={isProfileDrawerOpen}

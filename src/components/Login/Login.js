@@ -18,6 +18,8 @@ const classes = theme => {
             loginButton: {
                 marginTop: theme.spacing(2),
                 height: '4em',
+                color : theme.palette.primary.buttonText
+
             },
             progress: {
                 marginLeft: '10px',
@@ -26,9 +28,8 @@ const classes = theme => {
                 marginTop: theme.spacing(2),
             },
             containerPaper: {
-                minHeight: '400px',
+                //minHeight: '400px',
                 padding: '20px',
-                marginTop: '2px',
             },
 
         }
@@ -84,7 +85,7 @@ class Login extends Component {
 
                         <Grid item xs={12} sm={6} md={6}  >
                             <Typography variant="h6">
-                                {translate(language, "CREATE_YOUR_ACCOUNT")}
+                                {translate(language, "LOGIN")}
 
                             </Typography>
                             <form noValidate autoComplete="off" className={classes.form}>
@@ -120,7 +121,7 @@ class Login extends Component {
                                     fullWidth
                                     className={classes.loginButton}
                                     onClick={this.loginClickHandler.bind(this)}
-                                    color="secondary"
+                                    color="primary"
                                     variant="contained"
                                     disabled={pending || (Object.keys(validation).length !== 0) || isFormInitial}
                                     size="large" >

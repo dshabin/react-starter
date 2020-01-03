@@ -15,8 +15,9 @@ const classes = theme => {
         {
             signupButton: {
                 marginTop: theme.spacing(2),
-                height: '4em'
-                //borderRadius: '0px'
+                height: '4em',
+                color: theme.palette.primary.buttonText
+
             },
             progress: {
                 marginLeft: '10px',
@@ -25,7 +26,7 @@ const classes = theme => {
                 marginTop: theme.spacing(2)
             },
             containerPaper: {
-                minHeight: '400px',
+                //minHeight: '400px',
                 padding: '20px',
             },
         }
@@ -82,16 +83,15 @@ class Signup extends Component {
         const { validation, isFormInitial } = this.state
         return (
             <>
-                {/* <PageTitle title="SIGNUP" /> */}
-
-                <Paper elevation={0} square={true} className={classes.containerPaper} >
+                
+                <Paper square={true} className={classes.containerPaper} >
                     <Grid container justify="center" alignItems="center" direction="row"  >
 
                         <Grid item xs={12} sm={6} md={6}  >
                             <Typography variant="h6">
-                            {translate(language, "CREATE_YOUR_ACCOUNT")}
+                                {translate(language, "CREATE_YOUR_ACCOUNT")}
 
-                        </Typography>
+                            </Typography>
                             <form noValidate autoComplete="off">
                                 <TextField
                                     className={classes.textField}
@@ -139,7 +139,7 @@ class Signup extends Component {
                                     fullWidth
                                     className={classes.signupButton}
                                     onClick={this.signupClickHandler.bind(this)}
-                                    color="secondary"
+                                    color="primary"
                                     variant="contained"
                                     disabled={pending || (Object.keys(validation).length !== 0) || isFormInitial}
                                     size="large" >

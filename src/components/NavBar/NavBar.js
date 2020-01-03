@@ -13,25 +13,19 @@ import Typography from '@material-ui/core/Typography';
 const classes = theme => {
     return ({
         logoBox: {
-            flex: 1
-        },
-        loginBtn: {
-            marginRight: theme.spacing(1),
-            fontSize: '0.8em',
-            color : '#ffffff'
-            //borderRadius: '0px',
-
-        },
-        signupBtn: {
-            //borderRadius: '0px',
-            fontSize: '0.8em',
+            flex: 1,
         },
         logo: {
-            fontSize: '2em',
-            color: theme.palette.secondary[500]
+            color: theme.palette.primary.main
+        },
+        signupBtn : {
+            color : theme.palette.primary.buttonText
+        },
+        loginBtn:{
+            marginRight :theme.spacing(1)
         },
         appBar: {
-            backgroundColor: theme.palette.primary[800],
+            backgroundColor: '#ffffff',
         }
     })
 }
@@ -46,22 +40,22 @@ class NavBar extends Component {
             <AppBar elevation={0} position="static" className={classes.appBar}>
                 <Toolbar >
                     <Box component="span" className={classes.logoBox}>
-                        <Link to='/' style={{ height: '30px' }}>
-                            <Typography variant="button">
+                        <Link to='/'>
+                            <Typography className={classes.logo} variant="button">
                                 LOGO
                             </Typography>
                         </Link>
                     </Box>
                     {user ? <RightDrawer user={user} /> : <>
-                        <Link to='/login' style={{ textDecoration: 'none' }}>
-                            <Button size="small" className={classes.loginBtn} color="secondary">
+                        <Link to='/login' >
+                            <Button size="small" className={classes.loginBtn} color="primary">
                                 <Typography variant="button">
                                     {translate(language, "LOGIN")}
                                 </Typography>
                             </Button>
                         </Link>
-                        <Link to='/signup' style={{ textDecoration: 'none' }}>
-                            <Button size="small" className={classes.signupBtn} variant="contained" color="secondary">
+                        <Link to='/signup' >
+                            <Button size="small" className={classes.signupBtn} variant="contained" color="primary">
                                 <Typography variant="button">
                                     {translate(language, "SIGNUP")}
                                 </Typography>

@@ -24,7 +24,7 @@ const classes = theme => {
       flexGrow: 1,
     },
     box: {
-      minHeight: '400px'
+      //minHeight: '400px'
     }
   })
 }
@@ -66,7 +66,8 @@ class App extends Component {
         type: 'light',
         primary: {
           main : '#4dd0e1',  //'#5ADBFF'
-          link : '#999'
+          link : '#999',
+          buttonText : '#ffffff'
         },
         secondary:  {
           main :'#7c4dff'
