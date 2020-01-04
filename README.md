@@ -2,6 +2,7 @@
 
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
+![alt text](https://github.com/dshabin/react-starter/blob/master/react-starter.gif?raw=true "screenshot")
 
 To create a multi language react application we use react-material as UI-framework and Redux for state management.
 
