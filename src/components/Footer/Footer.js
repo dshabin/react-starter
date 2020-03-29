@@ -18,7 +18,7 @@ const classes = theme => {
         },
         paper: {
             padding: theme.spacing(2),
-            backgroundColor: '#fafafa'
+            backgroundColor : theme.palette.primary.main,
         },
         link: {
             cursor: 'pointer'

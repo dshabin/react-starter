@@ -29,6 +29,7 @@ const classes = theme => {
             },
             containerPaper: {
                 //minHeight: '400px',
+                backgroundColor : theme.palette.primary.main,
                 padding: '20px',
             },
 
@@ -121,7 +122,7 @@ class Login extends Component {
                                     fullWidth
                                     className={classes.loginButton}
                                     onClick={this.loginClickHandler.bind(this)}
-                                    color="primary"
+                                    color="secondary"
                                     variant="contained"
                                     disabled={pending || (Object.keys(validation).length !== 0) || isFormInitial}
                                     size="large" >

@@ -60,18 +60,17 @@ class App extends Component {
   render() {
     const { language, user, classes } = this.props
     const languageDir = getLanguageDir(language)
-    document.body.dir = languageDir;
     const theme = createMuiTheme({
       direction: languageDir,
       palette: {
-        type: 'light',
+        type: 'dark',
         primary: {
-          main: '#4dd0e1',  //'#5ADBFF'
+          main: '#252730',
           link: '#999',
           buttonText: '#ffffff'
         },
         secondary: {
-          main: '#7c4dff'
+          main: yellow[900]
         },
       },
       props: {
@@ -80,6 +79,8 @@ class App extends Component {
         }
       }
     });
+    document.body.dir = languageDir;
+    document.body.style.backgroundColor = theme.palette.primary.main;
     if (this.state.loading) {
       return (
         <CircularProgress color="secondary" thickness={5} size={50} />

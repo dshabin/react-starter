@@ -8,6 +8,7 @@ import { Paper } from '@material-ui/core';
 const classes = theme => {
     return ({
         containerPaper: {
+            backgroundColor : theme.palette.primary.main,
             padding: '10px',
         },
     })

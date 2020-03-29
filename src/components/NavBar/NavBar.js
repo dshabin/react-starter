@@ -16,7 +16,7 @@ const classes = theme => {
             flex: 1,
         },
         logo: {
-            color: theme.palette.primary.main
+            color: theme.palette.secondary.main
         },
         signupBtn : {
             color : theme.palette.primary.buttonText
@@ -25,7 +25,7 @@ const classes = theme => {
             marginRight :theme.spacing(1)
         },
         appBar: {
-            backgroundColor: '#ffffff',
+            backgroundColor : theme.palette.primary.main,
         }
     })
 }
@@ -48,14 +48,14 @@ class NavBar extends Component {
                     </Box>
                     {user ? <RightDrawer user={user} /> : <>
                         <Link to='/login' >
-                            <Button size="small" className={classes.loginBtn} color="primary">
+                            <Button size="small" className={classes.loginBtn} color="secondary">
                                 <Typography variant="button">
                                     {translate(language, "LOGIN")}
                                 </Typography>
                             </Button>
                         </Link>
                         <Link to='/signup' >
-                            <Button size="small" className={classes.signupBtn} variant="contained" color="primary">
+                            <Button size="small" className={classes.signupBtn} variant="contained" color="secondary">
                                 <Typography variant="button">
                                     {translate(language, "SIGNUP")}
                                 </Typography>
